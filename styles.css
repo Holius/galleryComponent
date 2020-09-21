@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+:root {
+  --main-purple: purple;
+  --gallery-transition: 1s;
+  --widthA: calc(8.125vw);
+  --widthB: calc(var(--widthA));
+  --widthC: calc(var(--widthB));
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery {
+  position: relative;
+  text-align: center;
+  display: grid;
+
+  grid-template-rows: 50vh;
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+  justify-items: center;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8155637254901961) 25%,
+    #ac62ce 100%
+  );
+  clip-path: polygon(
+    0 35%,
+    0 65%,
+    25% 100%,
+    75% 100%,
+    100% 65%,
+    100% 35%,
+    75% 0,
+    25% 0
+  );
+}
+
+.gallery--picture {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.gallery--hidden {
+  position: absolute;
+}
+
+.gallery--button {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 4rem;
+  color: white;
+  vertical-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.gallery--button-left {
+  left: 0;
+}
+
+.gallery--button-right {
+  right: 0;
+}
